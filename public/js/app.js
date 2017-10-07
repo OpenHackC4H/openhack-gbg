@@ -1,14 +1,31 @@
 var option, index;
 var button = document.getElementsByClassName("button")[0];
-var items = [];
+var items=[];
 
+fetchDb();
+//console.log(items);
 
 button.addEventListener("click", addSlide);
 
+function fetchDb() {
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8080/FETCH',
+        datatype: "json",
+        data: {s: JSON.stringify(items)},
+        success: function (response) {
+            items = JSON.parse(response);
+            console.log(response);
+        },
+        error: function(){
+            console.log("error");
+        }
+        
+    });
+}
 
 
 function addSlide() {
-    
     
     var img = document.getElementsByClassName("image")[0];
     var snd = document.getElementsByClassName("sound")[0];
@@ -26,9 +43,10 @@ function addSlide() {
         datatype: "json",
         data: {s: JSON.stringify(items)},
         success: function (response) {
+            console.log(response);
         },
         error: function(){
-            
+            console.log("error");
         }
         
     });
@@ -37,22 +55,4 @@ function addSlide() {
 
 
 
-function fetchDb() {
-    url = "js/db.json";
-    loadJSON(function (response) {
-        survey = JSON.parse(response);
-        fetchUsers();
-    });
-}
 
-function loadJSON(callback) {
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', url, true);
-    xobj.onreadystatechange = function () {
-        if (xobj.readyState === 4 && xobj.status == "200") {
-            callback(xobj.responseText);
-        }
-    };
-    xobj.send(null);
-}
