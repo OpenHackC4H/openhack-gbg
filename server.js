@@ -25,7 +25,6 @@ app.post('/FETCH', function(req, res) {
     });
 });
 
-
 app.post('/ADD_SLIDE', function(req, res) {
     
     console.log("adding slide " +req.body.s + " to db.json");
@@ -44,8 +43,6 @@ app.post('/ADD_SLIDE', function(req, res) {
     
     // Run your LED toggling code here
 });
-
-
 
 
 function loadJSON(callback) {
