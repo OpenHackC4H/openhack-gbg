@@ -1,6 +1,4 @@
-
-var action, url, option, index;
-
+var option, index;
 var button = document.getElementsByClassName("button")[0];
 var items = [];
 
@@ -8,29 +6,10 @@ var items = [];
 button.addEventListener("click", addSlide);
 
 
-function run() {
-    
-    switch (action) {
-        case 0:
-            // ADD
-            //populateQuestion();
-            break;
-        case 1:
-            // MODIFY
-            //generateUsers();
-            break;
-        default:
-            break;
-    }
-}
-
-function setAction(action) {
-    this.action = action;
-}
-
 
 function addSlide() {
-   
+    
+    
     var img = document.getElementsByClassName("image")[0];
     var snd = document.getElementsByClassName("sound")[0];
     var arr = [{image: img.value}, {sound: snd.value}]; 
@@ -40,11 +19,23 @@ function addSlide() {
     items.push(JSON.parse(json));
     
     console.log(JSON.stringify(items));
+        
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8080/ADD_SLIDE',
+        datatype: "json",
+        data: {s: JSON.stringify(items)},
+        success: function (response) {
+        },
+        error: function(){
+            
+        }
+        
+    });
 }
 
-function writeJSON() {
-    
-}
+
+
 
 function fetchDb() {
     url = "js/db.json";
