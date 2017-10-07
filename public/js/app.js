@@ -1,3 +1,4 @@
+var ip_address = 'http://172.4.163.208:8080';
 var option, index;
 var button = document.getElementsByClassName("button")[0];
 var items=[];
@@ -11,7 +12,7 @@ button.addEventListener("click", addSlide);
 function fetchDb() {
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/FETCH',
+        url: ip_address + '/FETCH',
         datatype: "json",
         data: {s: JSON.stringify(items)},
         success: function (response) {
@@ -82,7 +83,7 @@ function addSlide() {
         
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/ADD_SLIDE',
+        url: ip_address + '/ADD_SLIDE',
         datatype: "json",
         data: {s: JSON.stringify(items)},
         success: function (response) {
