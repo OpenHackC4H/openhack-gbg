@@ -4,10 +4,15 @@ var express = require('express');
 var app = express();
 var path = require('path');
 app.use(express.static(__dirname + '/public'));
- app.use(bodyParser());
+app.use(bodyParser());
   app.use(bodyParser.urlencoded({
   extended: true
   }));
+app.use(express.static(__dirname +'/public/img'));
+app.use(express.static(__dirname +'/public/sounds'));
+app.use(express.static(__dirname +'/public/js'));
+app.use(express.static(__dirname + '/public/logo'));
+var database = 'db.json';
 
 
 // viewed at http://localhost:8080
@@ -17,18 +22,24 @@ app.get('/', function(req, res) {
 
 app.use(bodyParser.json());
 app.post('/FETCH', function(req, res) {
-    console.log("FETCH called... fetching from db.json")
-    fs.readFile('public/js/db.json', 'utf8', function (err, data) {
+    database = req.body.s;
+    console.log("FETCH called... fetching from "+ req.body.s );
+    var obj;
+    fs.readFile('public/js/'+req.body.s, 'utf8', function (err, data) {
     if (err) throw err; // we'll not consider error handling for now
-    var items = data;
-    res.send(data);
+    
+    else{
+    obj = JSON.parse(data);
+    res.send(JSON.stringify(obj));
+    }
+    
     });
 });
 
 app.post('/ADD_SLIDE', function(req, res) {
     
     console.log("adding slide " +req.body.s + " to db.json");
-    fs.writeFile("public/js/db.json", req.body.s, function(err) {
+    fs.writeFile("public/js/"+database, (req.body.s), function(err) {
     if(err) {
         return console.log(err);
     }
@@ -43,7 +54,6 @@ app.post('/ADD_SLIDE', function(req, res) {
     
     // Run your LED toggling code here
 });
-
 
 function loadJSON(callback) {
     var xobj = new XMLHttpRequest();

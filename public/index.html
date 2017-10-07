@@ -1,30 +1,112 @@
-<div class="login-page">
-    <form>
-      <input type="text" class="image" placeholder="path to image"/>
-      <input type="text" class="sound" placeholder="path to sound"/>
-      <button class="button">ADD PROCESS</button>
-    </form>
-    <table>
-        <tr>
-    <th>Image Path</th>
-    <th>Sound Path</th> 
-    <th>Select</th>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link href="//netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<style>
+.login-page{
+    width: 300px;
+    margin-top: 50;
+}
+
+.btn span.glyphicon {    			
+	opacity: 0;				
+}
+.btn.active span.glyphicon {				
+	opacity: 1;				
+}
+    
+.login-page2{
+    margin: 0 auto;
+    width: 70%;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 50px;
+    background: white;
+}
+.radio{
+    display: inline-block;
+    margin: 0 auto;
+}
+    
+.tb-center{
+        margin: 0 auto;
+        width:80%;
+}
+
+.tr-center{
+        text-align: center;
+        vertical-align: middle;
+}
+.td-center{
+    text-align: center;
+    vertical-align: middle;
+}
+    
+    
+.th-center{
+    text-align: center;
+}
+
+.btn-success.round {
+	border-radius: 24px;
+}
+.img-responsive{
+width: 80%;
+height: auto;
+margin-left: 25;
+}
+h2 {
+    text-align: center;
+}
+
+.button{
+margin: 15 auto;
+display: block;
+
+}
+body{
+background: url('/img/bg.jpeg');
+background-size: cover;
+}
+</style>
+
+
+
+<div class="login-page form-group container">
+    <img class="img-responsive" src="logo/Stories.png" alt="Stories">
+
+      <h2>Welcome!</h2>
+      <form>
+      <input type="text" class="image form-control" placeholder="path to image"/>
+      <input type="text" class="sound form-control" placeholder="path to sound"/>
+      <button class="button bbtn btn-primary btn-lg round container">Add process</button>
+      </form>
+</div>
+<div class="login-page2 form-group container">
+      <table class="tb-center">
+        <tr class=tr-center>
+    <th class="th-center">Image Path</th>
+    <th class="th-center">Sound Path</th> 
+    <th class="th-center">Select</th>
     </tr>
     <tbody class="slideholder">
         
     </tbody>
-        <td>
-            <button class="btn-down"> MOVE DOWN </button>
+        <td >
+            <form >
+            <button class="btn-down button bbtn btn-primary btn-lg round" > MOVE DOWN </button>
+            </form>
+        </td>
+        <td >
+            <form >
+            <button class="btn-up button bbtn btn-primary btn-lg round"> MOVE UP </button>
+            </form>
         </td>
         <td>
-            <button class="btn-up"> MOVE UP </button>
+            <form >
+            <button class="btn-remove button bbtn btn-primary btn-lg round"> REMOVE </button>
+            </form>
         </td>
     </table>
 </div>
-
-
-
-    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/app.js">
     </script>
