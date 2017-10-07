@@ -12,4 +12,13 @@ What we have done so far:
 * Added bootstrap to the site.
 
 
-##Day two
+## Day two
+* Started implementing node.js backend together with express.js
+* Admin interface is working to an extent.
+* Wrote an entire front-end for the mobile part of the challange just to ditch the idea for
+native instead.
+* Native now communicates with nodejs server to fetch urls for sounds & images
+* Started on our presentation.
+
+## Day three (presentation day)
+* TODO
