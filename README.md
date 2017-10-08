@@ -1,7 +1,5 @@
 # Openhack 2017 - Shotgun Sorters
 
-License: MIT
-
 ![](team.JPG)
 
 ## Case from Migrationsverket
@@ -26,3 +24,5 @@ native instead.
 
 ## Day three (presentation day)
 * TODO
+
+License: MIT
