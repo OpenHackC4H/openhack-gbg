@@ -1,8 +1,10 @@
 # Openhack 2017 - Shotgun Sorters
 
+License: MIT
+
 ## Case from Migrationsverket
 
-We have chosen to work with the case from Migrationsverket using flat-file JSON and basic html, css and nodeJS with Xcode.
+We have chosen to work with the case from Migrationsverket using flat-file JSON and basic html, CSS and NodeJS with Xcode.
 
 ## Day one
 What we have done so far:
