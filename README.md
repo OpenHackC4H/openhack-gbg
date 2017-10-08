@@ -2,6 +2,8 @@
 
 License: MIT
 
+![](team.JPG)
+
 ## Case from Migrationsverket
 
 We have chosen to work with the case from Migrationsverket using flat-file JSON and basic html, CSS and NodeJS with Xcode.
